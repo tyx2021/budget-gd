@@ -13,7 +13,7 @@ let id=0;
 document.addEventListener('keydown', (event)=>{
     var code=event.code;
     if(code==='Space'){
-        if(downv==0) downv-=7;
+        if(downv==0) downv-=5;
     }
 }, false); 
 let prev=Date.now();
@@ -32,19 +32,19 @@ function peesik(){
                 //console.log("wtf");
                             
             }
-            else downv+=0.2;
+            else downv+=0.1;
             height=wallheight[numwallspast];
             
         } 
         else{
             if(bot===0) downv=0;
-            else downv+=0.2;
+            else downv+=0.1;
         }
     }
     
     else{
         if(bot===0) downv=0;
-        else downv+=0.2;
+        else downv+=0.1;
     }
     console.log(height);
     document.getElementById("square").style.bottom=bot+"px";
@@ -54,7 +54,7 @@ function peesik(){
         if(((40>=i)&&(40<=i+50))&&(2*bot<=wallheight[counter])){
             dead=1;
         }
-        walls[counter]=walls[counter]-4;
+        walls[counter]=walls[counter]-2.3;
         document.getElementById("wall"+counter).style.left=walls[counter]+"px";
         
     }
@@ -67,7 +67,7 @@ function peesik(){
         //console.log(counter);
     }
     for(counter in spikes){
-        spikes[counter]=spikes[counter]-4;
+        spikes[counter]=spikes[counter]-2.3;
         //console.log("wtf " + counter);
         //console.log(spikes[counter]);
         document.getElementById("spike"+counter).style.left=spikes[counter]+"px";
@@ -99,15 +99,21 @@ function peesik(){
         load();
     }
 }
-
+let k=0;
 function load(){
     for(let i=0;i<1000;i++) height[i]=0;
     rangedwall(10,25,1);
     rangedspikes(15,17);
-    rangedwall(26,40,2);
-    rangedspikes(30,32);
-    rangedspikes(38,40);
-    id=setInterval(peesik,10);
+    rangedwall(26,46,2);
+    rangedspikes(30,30);
+    rangedspikes(38,38);
+    rangedspikes(46,46);
+    id=setInterval(peesik,5);
+    rangedwall(60-k,65-k,1);
+    rangedwall(66-k,71-k,2);
+    rangedwall(72-k,77-k,3);
+    rangedwall(78-k,83-k,4);
+    rangedspikes(84-k,88-k);
 }
 
 function createspike(x){
