@@ -9,6 +9,7 @@ height={};
 let cntwall=0;
 let numofspikes=0;
 let numofwalls=0;
+let id=0;
 document.addEventListener('keydown', (event)=>{
     var code=event.code;
     if(code==='Space'){
@@ -76,7 +77,7 @@ function peesik(){
     prev=Date.now();
 
     if(dead===1){
-        clearInterval();
+        clearInterval(id);
         bot=0;
         downv=0;
         spikes=[];
@@ -99,7 +100,7 @@ function load(){
     rangedwall(26,40,2);
     rangedspikes(30,32);
     rangedspikes(38,40);
-    setInterval(peesik,10);
+    id=setInterval(peesik,10);
 }
 
 function createspike(x){
