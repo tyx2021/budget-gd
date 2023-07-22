@@ -77,13 +77,14 @@ function peesik(){
     prev=Date.now();
 
     if(dead===1){
+        clearInterval(id);
         for(counter in spikes){
-            remove(document.getElementById("spike"+counter));
+            document.getElementById("spike"+counter).remove();
         }
         for(counter in walls){
-            remove(document.getElementById("wall"+counter));
+            document.getElementById("wall"+counter).remove();
         }
-        clearInterval(id);
+        
         bot=0;
         downv=0;
         spikes=[];
