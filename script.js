@@ -19,7 +19,7 @@ function peesik(){
     bot=Math.max(0,bot-downv);
     //console.log(downv);
     let height=0;
-    console.log(numwallspast);
+    //console.log(numwallspast);
     if(numwallspast<cntwall){
         
         if(walls[numwallspast]<=80){
@@ -75,6 +75,8 @@ function peesik(){
     prev=Date.now();
 
     if(dead===1){
+        clearInterval();
+        load();
         location.reload();
     }
 }
