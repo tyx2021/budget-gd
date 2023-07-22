@@ -1,0 +1,27 @@
+#square{
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    position:absolute;
+    bottom: 0px;
+    left:10px;
+}
+#container{
+    width: 1000px;
+    height: 500px;
+    background-color: blue;
+    position: relative;
+}
+.spike{
+	width: 0;
+	height: 0;
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+	border-bottom: 50px solid #555;
+    position: absolute;
+}
+.wall{
+    width: 50px;
+    position: absolute;
+    background-color: #555;
+}
