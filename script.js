@@ -6,7 +6,9 @@ let wallheight=[];
 let cnt=0;
 let numwallspast=0;
 height={};
-
+let cntwall=0;
+let numofspikes=0;
+let numofwalls=0;
 document.addEventListener('keydown', (event)=>{
     var code=event.code;
     if(code==='Space'){
@@ -14,7 +16,6 @@ document.addEventListener('keydown', (event)=>{
     }
 }, false); 
 let prev=Date.now();
-let cntwall=0;
 function peesik(){
     bot=Math.max(0,bot-downv);
     //console.log(downv);
@@ -76,8 +77,18 @@ function peesik(){
 
     if(dead===1){
         clearInterval();
+        bot=0;
+        downv=0;
+        spikes=[];
+        walls=[];
+        wallheight=[];
+        cnt=0;
+        numwallspast=0;
+        height={};
+        cntwall=0;
+        numofspikes=0;
+        numofwalls=0;
         load();
-        location.reload();
     }
 }
 
@@ -90,8 +101,7 @@ function load(){
     rangedspikes(38,40);
     setInterval(peesik,10);
 }
-let numofspikes=0;
-let numofwalls=0;
+
 function createspike(x){
     const spike=document.createElement("div");
     spike.style.left=50*x+"px";
